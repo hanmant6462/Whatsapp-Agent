@@ -24,13 +24,13 @@ export default function Dashboard() {
   const fetchConversations = useCallback(async () => {
     const res = await fetch("/api/conversations");
     const data = await res.json();
-    setConversations(data);
+    setConversations(Array.isArray(data) ? data : []);
   }, []);
 
   const fetchMessages = useCallback(async (convoId: string) => {
     const res = await fetch(`/api/conversations/${convoId}/messages`);
     const data = await res.json();
-    setMessages(data);
+    setMessages(Array.isArray(data) ? data : []);
   }, []);
 
   useEffect(() => {
