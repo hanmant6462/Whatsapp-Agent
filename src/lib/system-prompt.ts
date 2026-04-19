@@ -156,3 +156,4 @@ Technology
 This script is designed to:
 
 feel like a helpful advisor who remembers and follows up—not a sales bot.
+`;
